@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claud Soft</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .loader {
+          width: 50px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          padding: 1px;
+          background: conic-gradient(#0000, #1E4D92) content-box;
+          mask: repeating-conic-gradient(
+              #0000 0deg,
+              #000 1deg calc(360deg/10 - 10deg - 1deg),
+              #0000 calc(360deg/10 - 10deg) calc(360deg/10)
+          ), radial-gradient(
+              farthest-side,
+              #0000 calc(98% - 10px),
+              #000 calc(100% - 10px)
+          );
+          mask-composite: intersect;
+          -webkit-mask-composite: destination-in;
+          animation: spin 1000ms infinite steps(10);
+      }
+
+      @keyframes spin { 
+          to { transform: rotate(1turn) } 
+      }
+
+      /* تصميم شاشة الانتظار */
+      #loader {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff;
+          z-index: 9999;
+      }
+  </style>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/logo1.png" />
+  </head>
+  <body dir="rtl">
+
+
+
+
+    <header>
+      <div class="container">
+        <a href="/" class="logo">
+          <img src="images/logo1.png" alt="logo" />
+        </a>
+        <nav>
+          <i
+            class="fas fa-bars toggle-menu"
+            id="toggle-menu"
+            onclick="open_close_nav()"
+          ></i>
+          <ul id="ul_navbar">
+            <li><a class="active" href="/">الرئيسية</a></li>
+            <li><a href="#">الكورسات</a></li>
+            <li><a href="#trainer">خدماتنا</a></li>
+            <li><a href="#">المدونة</a></li>
+            <li><a href="#">حولنا</a></li>
+            <li><a href="#">إتصل بنا</a></li>
+          </ul>
+          <!-- <i onclick="open_close_nav1()"  class="fas fa-bars nav-mobile"></i> -->
+        </nav>
+        <div class="social">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-linkedin-in"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+      </div>
+    </header>
+
+
+    
+
+
+
+    <section class="mobil-nav" id="mobil-nav">
+      <div class="logo">
+        <img src="images/logo1.png" alt="">
+        <h4>المدرب ياسين جوخدار</h4>
+      </div>
+      <nav>
+        <ul id="">
+          <li><a class="active" href="/">الرئيسية</a></li>
+          <li><a href="#">الكورسات</a></li>
+          <li><a href="#trainer">خدماتنا</a></li>
+          <li><a href="#">المدونة</a></li>
+          <li><a href="#">حولنا</a></li>
+          <li><a href="#">إتصل بنا</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-social">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin-in"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+
+      <div class="contact-form">
+        <input type="text">
+        <input type="submit">
+      </div>
+
+
+    </section>
+
+
+
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-text">
+          <h1>موقع وأكاديمية تعليمية</h1>
+          <h2>للمدرب ياسين محمد جوخدار</h2>
+          <p>
+            "أنا ياسين، مدرب متخصص في تعليم لغات البرمجة بأسلوب مبسط وعملي. أقدم
+            دورات تدريبية موجهة للمبتدئين والمحترفين، تغطي أساسيات البرمجة
+            وتطبيقاتها المتقدمة. هدفي هو تمكينك من تطوير مهاراتك البرمجية
+            والنجاح في مسيرتك المهنية."
+          </p>
+
+          <div class="social social2">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+
+          <div class="call-action">
+            <button>إتصل بنا</button>
+            <button>المزيد</button>
+          </div>
+        </div>
+
+        <div class="hero-img">
+          <img src="images/yasin.webp" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <img class="imagefloat" src="images/float-img.png" alt="" />
+      <div class="container">
+        <h2>خدماتنا الرائعة</h2>
+        <div class="all-features">
+          <div class="feature">
+            <!-- <i class="fa-regular fa-clock"></i> -->
+            <img width="70px" src="images/angular-icon-1.svg" alt="" />
+            <h3>تصميم وبرمجة مواقع الويب</h3>
+            <p>
+              الوقت هو أثمن مورد يمتلكه الإنسان، فهو يمضي بلا رجعة ولا يمكن
+              تعويضه. استثماره بحكمة يمنحك الفرصة لتحقيق أحلامك وأهدافك في حصر
+              لها.
+            </p>
+          </div>
+          <div class="feature">
+            <!-- <i class="fa-regular fa-clock"></i> -->
+            <img width="60px" src="images/svg/flutter.svg" alt="" />
+
+            <h3>تصميم وبرمجة تطبيقات الجوال</h3>
+            <p>
+              الوقت هو أثمن مورد يمتلكه الإنسان، فهو يمضي بلا رجعة ولا يمكن
+              تعويضه. استثماره بحكمة يمنحك الفرصة لتحقيق أحلامك وأهدافك في حصر
+              لها.
+            </p>
+          </div>
+          <div class="feature">
+            <!-- <i class="fa-regular fa-clock"></i> -->
+            <img width="70px" src="images/svg/python-5 (1).svg" alt="" />
+
+            <h3>إدارة وبرمجة السيرفرات</h3>
+            <p>
+              الوقت هو أثمن مورد يمتلكه الإنسان، فهو يمضي بلا رجعة ولا يمكن
+              تعويضه. استثماره بحكمة يمنحك الفرصة لتحقيق أحلامك وأهدافك في حصر
+              لها.
+            </p>
+          </div>
+          <div class="feature">
+            <!-- <i class="fa-regular fa-clock"></i> -->
+            <img width="70px" src="images/svg/react-2.svg" alt="" />
+
+            <h3>التصميم الجرافيكي</h3>
+            <p>
+              الوقت هو أثمن مورد يمتلكه الإنسان، فهو يمضي بلا رجعة ولا يمكن
+              تعويضه. استثماره بحكمة يمنحك الفرصة لتحقيق أحلامك وأهدافك في حصر
+              لها.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trainer-info" id="trainer">
+      <div class="container">
+        <div class="text">
+          <h2>المدرب ياسين محمد جوخدار</h2>
+          <p>
+            متخصص في مجالات برمجة وتصميم مواقع الويب، حيث أملك خبرة غنية وتاريخ
+            ناجح في التعليم التقني. عملت مع عدة جهات تدريبية، حيث قدمت دورات
+            متقدمة في تطوير البرمجيات وتصميم الواجهات. بالإضافة إلى ذلك، استمرت
+            مشاركتي الفعّالة في المجتمع التقني في تحفيز الطلاب وبناء مجتمع ملهم
+            لتعزيز التعلم المستدام في علوم الحاسوب
+          </p>
+          <button>للمزيد إضغط هنا</button>
+        </div>
+        <div class="image">
+          <img class="img" src="images/trainer.webp" alt="yasin" />
+        </div>
+      </div>
+    </section>
+
+    <section class="statistics">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="stat">
+          <h2>1500</h2>
+          <p>عميل سعيد</p>
+        </div>
+        <div class="stat">
+          <h2>1500</h2>
+          <p>عميل سعيد</p>
+        </div>
+        <div class="stat">
+          <h2>1500</h2>
+          <p>عميل سعيد</p>
+        </div>
+        <div class="stat">
+          <h2>1500</h2>
+          <p>عميل سعيد</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="courses">
+      <div class="container">
+        <h2 class="title-course">الكورسات التي نقدمها</h2>
+        <div class="all-courses">
+          <div class="course">
+            <div class="category-bar">فرونت أند</div>
+            <img src="images/mysql.jpg" alt="" />
+            <h2 class="course-title">كورس الرونت أند</h2>
+            <p class="course-desc">
+              يتم شرح لغة php من الصفر حتى الاحتراف بأسلوب شيق.....
+            </p>
+            <div class="course-price">
+              <div>
+                <span class="sale">السعر:</span>
+                <span class="price">250$</span>
+              </div>
+              <div>
+                <span class="mony">150$</span>
+              </div>
+            </div>
+            <hr class="hr" />
+            <div class="info">
+              <i class="fa-solid fa-users"></i>
+              <span>1200</span>
+            </div>
+            <button class="course-deatils">تفاصيل الكورس</button>
+          </div>
+
+
+
+
+
+
+
+          <div class="course">
+            <div class="category-bar">فرونت أند</div>
+            <img src="images/photoshop.jpg" alt="" />
+            <h2 class="course-title">كورس الرونت أند</h2>
+            <p class="course-desc">
+              يتم شرح لغة php من الصفر حتى الاحتراف بأسلوب شيق.....
+            </p>
+            <div class="course-price">
+              <div>
+                <span class="sale">السعر:</span>
+                <span class="price">250$</span>
+              </div>
+              <div>
+                <span class="mony">150$</span>
+              </div>
+            </div>
+            <hr class="hr" />
+            <div class="info">
+              <i class="fa-solid fa-users"></i>
+              <span>1200</span>
+            </div>
+            <button class="course-deatils">تفاصيل الكورس</button>
+          </div>
+          <div class="course">
+            <div class="category-bar">فرونت أند</div>
+            <img src="images/python.jpg" alt="" />
+            <h2 class="course-title">كورس الرونت أند</h2>
+            <p class="course-desc">
+              يتم شرح لغة php من الصفر حتى الاحتراف بأسلوب شيق.....
+            </p>
+            <div class="course-price">
+              <div>
+                <span class="sale">السعر:</span>
+                <span class="price">250$</span>
+              </div>
+              <div>
+                <span class="mony">150$</span>
+              </div>
+            </div>
+            <hr class="hr" />
+            <div class="info">
+              <i class="fa-solid fa-users"></i>
+              <span>1200</span>
+            </div>
+            <button class="course-deatils">تفاصيل الكورس</button>
+          </div>
+          <div class="course">
+            <div class="category-bar">فرونت أند</div>
+            <img src="images/php1.jpg" alt="" />
+            <h2 class="course-title">كورس الرونت أند</h2>
+            <p class="course-desc">
+              يتم شرح لغة php من الصفر حتى الاحتراف بأسلوب شيق.....
+            </p>
+            <div class="course-price">
+              <div>
+                <span class="sale">السعر:</span>
+                <span class="price">250$</span>
+              </div>
+              <div>
+                <span class="mony">150$</span>
+              </div>
+            </div>
+            <hr class="hr" />
+            <div class="info">
+              <i class="fa-solid fa-users"></i>
+              <span>1200</span>
+            </div>
+            <button class="course-deatils">تفاصيل الكورس</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio">
+      <div class="container">
+        <h2>معرض الصور من أعمالنا</h2>
+        <div class="navigate">
+          <ul>
+            <li><a class="active" href="">برمجة الويب</a></li>
+            <li><a href="">تطبيقات الجوال</a></li>
+            <li><a href="">الجرفيك </a></li>
+            <li><a href="">المونتاج</a></li>
+            <li><a href="">الذكاء الاصطناعي</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="portfolio-container">
+        <div class="box">
+          <img src="images/img1.webp" alt="img" />
+          <div class="caption">
+            <h3>Graphic Design</h3>
+            <p>Turkey - Istanbul</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/img1.webp" alt="img" />
+          <div class="caption">
+            <h3>Graphic Design</h3>
+            <p>Turkey - Istanbul</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/img1.webp" alt="img" />
+          <div class="caption">
+            <h3>Graphic Design</h3>
+            <p>Turkey - Istanbul</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/img1.webp" alt="img" />
+          <div class="caption">
+            <h3>Graphic Design</h3>
+            <p>Turkey - Istanbul</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/img1.webp" alt="img" />
+          <div class="caption">
+            <h3>Graphic Design</h3>
+            <p>Turkey - Istanbul</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/img1.webp" alt="img" />
+          <div class="caption">
+            <h3>Graphic Design</h3>
+            <p>Turkey - Istanbul</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/img1.webp" alt="img" />
+          <div class="caption">
+            <h3>Graphic Design</h3>
+            <p>Turkey - Istanbul</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/img1.webp" alt="img" />
+          <div class="caption">
+            <h3>Graphic Design</h3>
+            <p>Turkey - Istanbul</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="teams">
+      <h2 class="title">فريق عملنا المميز</h2>
+      <div class="container">
+
+
+
+        <div class="box">
+
+
+          <div class="img-social">
+            <div class="social1">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <img src="images/testimonials/avatar-05.png" alt="" />
+          </div>
+
+
+
+          <div class="info-team">
+            <h2>محمد العلي</h2>
+            <p>مطور برمجيات</p>
+          </div>
+
+
+
+
+        </div>
+        <div class="box">
+          <div class="img-social">
+            <div class="social1">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <img src="images/testimonials/avatar-05.png" alt="" />
+          </div>
+
+          <div class="info-team">
+            <h2>محمد العلي</h2>
+            <p>مطور برمجيات</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-social">
+            <div class="social1">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <img src="images/testimonials/avatar-05.png" alt="" />
+          </div>
+
+          <div class="info-team">
+            <h2>محمد العلي</h2>
+            <p>مطور برمجيات</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-social">
+            <div class="social1">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <img src="images/testimonials/avatar-05.png" alt="" />
+          </div>
+
+          <div class="info-team">
+            <h2>محمد العلي</h2>
+            <p>مطور برمجيات</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2 class="title">آراء عمـــلاءنا الكرام</h2>
+      <div class="container">
+
+        <div class="box">
+          <img src="images/testimonials/avatar-03.png" alt="" />
+          <h2>محمد الخالد</h2>
+          <p class="job">مطور برمجيات</p>
+          <div class="stars">
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+          </div>
+          <p class="review">
+            دورات البرمجة لدينا متميزة وشاملة، تقدم محتوى تعليمي دقيق ومفيد
+            بأسلوب مبسط وسلس. يتميز المدربون بالخبرة والاحترافية، مع تقديم دعم
+            مستمر وحلول عملية للمشاكل. الدورات تعد بيئة مثالية لتطوير المهارات
+            وتحقيق النجاح.
+          </p>
+        </div>
+
+
+
+
+        
+        <div class="box">
+          <img src="images/testimonials/avatar-03.png" alt="" />
+          <h2>محمد الخالد</h2>
+          <p class="job">مطور برمجيات</p>
+          <div class="stars">
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+          </div>
+          <p class="review">
+            دورات البرمجة لدينا متميزة وشاملة، تقدم محتوى تعليمي دقيق ومفيد
+            بأسلوب مبسط وسلس. يتميز المدربون بالخبرة والاحترافية، مع تقديم دعم
+            مستمر وحلول عملية للمشاكل. الدورات تعد بيئة مثالية لتطوير المهارات
+            وتحقيق النجاح.
+          </p>
+        </div>
+        <div class="box">
+          <img src="images/testimonials/avatar-03.png" alt="" />
+          <h2>محمد الخالد</h2>
+          <p class="job">مطور برمجيات</p>
+          <div class="stars">
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+          </div>
+          <p class="review">
+            دورات البرمجة لدينا متميزة وشاملة، تقدم محتوى تعليمي دقيق ومفيد
+            بأسلوب مبسط وسلس. يتميز المدربون بالخبرة والاحترافية، مع تقديم دعم
+            مستمر وحلول عملية للمشاكل. الدورات تعد بيئة مثالية لتطوير المهارات
+            وتحقيق النجاح.
+          </p>
+        </div>
+        <div class="box">
+          <img src="images/testimonials/avatar-03.png" alt="" />
+          <h2>محمد الخالد</h2>
+          <p class="job">مطور برمجيات</p>
+          <div class="stars">
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+          </div>
+          <p class="review">
+            دورات البرمجة لدينا متميزة وشاملة، تقدم محتوى تعليمي دقيق ومفيد
+            بأسلوب مبسط وسلس. يتميز المدربون بالخبرة والاحترافية، مع تقديم دعم
+            مستمر وحلول عملية للمشاكل. الدورات تعد بيئة مثالية لتطوير المهارات
+            وتحقيق النجاح.
+          </p>
+        </div>
+        <div class="box">
+          <img src="images/testimonials/avatar-03.png" alt="" />
+          <h2>محمد الخالد</h2>
+          <p class="job">مطور برمجيات</p>
+          <div class="stars">
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+          </div>
+          <p class="review">
+            دورات البرمجة لدينا متميزة وشاملة، تقدم محتوى تعليمي دقيق ومفيد
+            بأسلوب مبسط وسلس. يتميز المدربون بالخبرة والاحترافية، مع تقديم دعم
+            مستمر وحلول عملية للمشاكل. الدورات تعد بيئة مثالية لتطوير المهارات
+            وتحقيق النجاح.
+          </p>
+        </div>
+        <div class="box">
+          <img src="images/testimonials/avatar-03.png" alt="" />
+          <h2>محمد الخالد</h2>
+          <p class="job">مطور برمجيات</p>
+          <div class="stars">
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="fill fa-solid fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+            <span><i class="empty fa-regular fa-star"></i></span>
+          </div>
+          <p class="review">
+            دورات البرمجة لدينا متميزة وشاملة، تقدم محتوى تعليمي دقيق ومفيد
+            بأسلوب مبسط وسلس. يتميز المدربون بالخبرة والاحترافية، مع تقديم دعم
+            مستمر وحلول عملية للمشاكل. الدورات تعد بيئة مثالية لتطوير المهارات
+            وتحقيق النجاح.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="our-skills">
+      <h2 class="title">مهاراتي الحاسوبية والبرمجية</h2>
+      <div class="container">
+        <div class="skills">
+
+
+
+          <div class="skill">
+
+            <div class="count">
+              <p>HTML</p>
+              <p>90%</p>
+            </div>
+
+            <div class="prog">
+              <span style="width: 90%;"></span>
+            </div>
+            
+          </div>
+
+
+
+          <div class="skill">
+            <div class="count">
+              <p>CSS</p>
+              <p>80%</p>
+            </div>
+            <div class="prog">
+              <span style="width: 80%;"></span>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="count">
+              <p>JavaScript</p>
+              <p>70%</p>
+            </div>
+            <div class="prog">
+              <span style="width: 70%;"></span>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="count">
+              <p>PHP</p>
+              <p>100%</p>
+            </div>
+            <div class="prog">
+              <span style="width: 100%;"></span>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="count">
+              <p>Flutter</p>
+              <p>70%</p>
+            </div>
+            <div class="prog">
+              <span style="width: 70%;"></span>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="count">
+              <p>Python</p>
+              <p>60%</p>
+            </div>
+            <div class="prog">
+              <span style="width: 60%;"></span>
+            </div>
+          </div>
+        </div>
+        <div class="skills-img">
+          <img src="images/ss.jpg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonilas">
+      <div class="container">
+        
+      </div>
+    </section>
+
+
+
+    <!-- Start Pricing  Section -->
+ <div class="pricing-section">
+  <div class="container">
+      <div class="plan">
+          <h3 class="plan-title">الاحترافية</h3>
+          <img src="images/svg/react-2.svg" width="90" alt="">
+          <div class="price">
+              <p>15%</p>
+              <p>شهريا</p>
+          </div>
+  
+          <ul>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+          </ul>
+  
+          <button class="btn-plan">إشترك الآن</button>
+      </div>
+
+      <div class="plan mem">
+          <!-- <h3 class="plan-title">الاحترافية</h3> -->
+          <img src="images/svg/react-2.svg" width="90" alt="">
+          <div class="price">
+              <p>15%</p>
+              <p>شهريا</p>
+          </div>
+  
+          <ul>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+          </ul>
+  
+          <button class="btn-plan">إشترك الآن</button>
+      </div>
+      <div class="plan">
+          <h3 class="plan-title">الاحترافية</h3>
+          <img src="images/svg/react-2.svg" width="90" alt="">
+          <div class="price">
+              <p>15%</p>
+              <p>شهريا</p>
+          </div>
+  
+          <ul>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+              <li>أربع فيديوهات وصورتين</li>
+          </ul>
+  
+          <button class="btn-plan">إشترك الآن</button>
+      </div>
+
+ 
+
+  </div>
+</div>
+<!-- End Pricing  Section -->
+
+
+    
+
+    <footer>
+      <div class="container">
+        <div class="all-sections">
+
+
+          <div class="section">
+            <h2>روابط هامة</h2>
+            <!-- <ul>
+                        <li><a href="">الكورسات</a></li>
+                        <li><a href="">الكورسات</a></li>
+                        <li><a href="">الكورسات</a></li>
+                        <li><a href="">الكورسات</a></li>
+                        <li><a href="">الكورسات</a></li>
+                    </ul> -->
+
+            <p>
+              "أنا ياسين، بأسلوب مبسط وعملي. أقدم دورات تدريبية موجهة للمبتدئين
+              والمحترفين، تغطي أساسيات البرمجة وتطبيقاتها المتقدمة. هدفي هو
+              تمكينك من تطوير مهاراة."
+            </p>
+          </div>
+
+
+
+          <div class="section">
+            <h2>أهم الخدمات</h2>
+            <ul>
+              <li><a href="">تصميم وبرمجة مواقع الويب</a></li>
+              <li><a href="">تصميم وبرمجة تطبيقات الجوال</a></li>
+              <li><a href="">إدارة وبرمجة السيرفرات</a></li>
+              <li><a href="">التصميم الجرافيكي والمونتاج</a></li>
+              <li><a href="">التسويق الالكتروني</a></li>
+            </ul>
+          </div>
+
+
+
+          
+          <div class="section">
+            <h2>أهم الكورسات</h2>
+            <ul>
+              <li><a href="">كورسات البرمجة </a></li>
+              <li><a href="">كورسات التسويق الاكتروني</a></li>
+              <li><a href="">كورسات التصميم الجرافيكي</a></li>
+              <li><a href="">كورسات تطبيقات غوغل السحابية</a></li>
+              <li><a href="">كورسات برمجة الاردوينو</a></li>
+            </ul>
+          </div>
+          <div class="section" style="position: relative;">
+            <h2>النشرة البريدية</h2>
+            <div class="letter">
+              <form action="">
+                <input type="text" placeholder="الرجاء ادخال الاسم" />
+                <input
+                  type="email"
+                  placeholder="الرجاء ادخال البريد الالكتروني"
+                />
+                <input type="submit" value="إرسال البيانات" />
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <hr class="hr-footer" />
+        <div class="copyright">
+          <p>كافة الحقوق محفوظة لشركة كلاود سوفت</p>
+        </div>
+      </div>
+    </footer>
+
+
+    <div id="loader">
+      <div class="loader"></div>
+  </div>
+
+  <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+
+    <script>
+      // إخفاء عنصر الانتظار عند انتهاء تحميل الصفحة
+      window.onload = function() {
+          document.getElementById('loader').style.display = 'none';
+      }
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
